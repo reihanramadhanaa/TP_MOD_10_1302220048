@@ -2,32 +2,46 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace tpmodul10__1302220048.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class MahasiswaController : Controller
     {
-        private static readonly string[] Summaries = new[]
+        public static List<Mahasiswa> dataMahasiswa = new List<Mahasiswa>
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            new Mahasiswa("Reihan Ramadhana Anwari", "1302220048"),
+            new Mahasiswa("Muhammad Rafif AryaSatya Purnomo", "1302220003"),
+            new Mahasiswa("Muhammad Ghaziveda Belvanaufal", "1302220011"),
+            new Mahasiswa("Daffa Adrianto Effendi", "1302220151"),
+            new Mahasiswa("Mochammad Rizky Septian", "1302220121"),
+            new Mahasiswa("Muhammad Ghiyats Fatiha", "1302220109"),
+            new Mahasiswa("Muhammad Zidan Siva Fajar", "1302223039")
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        [HttpGet]
+        public IEnumerable<Mahasiswa> Get()
         {
-            _logger = logger;
+            return dataMahasiswa;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+
+        [HttpGet("{id}")]
+        public Mahasiswa Get(int id)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return dataMahasiswa[id];
+        }
+
+
+        [HttpPost]
+        public void Post([FromBody] Mahasiswa value)
+        {
+            dataMahasiswa.Add(value);
+        }
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            dataMahasiswa.RemoveAt(id);
         }
     }
+
 }

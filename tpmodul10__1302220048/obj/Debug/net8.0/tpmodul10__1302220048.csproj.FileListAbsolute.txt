@@ -30,3 +30,4 @@ C:\semester 4\konstruksi perangkat lunak\tpmodul10__1302220048\tpmodul10__130222
 C:\semester 4\konstruksi perangkat lunak\tpmodul10__1302220048\tpmodul10__1302220048\obj\Debug\net8.0\tpmodul10__1302220048.pdb
 C:\semester 4\konstruksi perangkat lunak\tpmodul10__1302220048\tpmodul10__1302220048\obj\Debug\net8.0\tpmodul10__1302220048.genruntimeconfig.cache
 C:\semester 4\konstruksi perangkat lunak\tpmodul10__1302220048\tpmodul10__1302220048\obj\Debug\net8.0\ref\tpmodul10__1302220048.dll
+C:\semester 4\konstruksi perangkat lunak\tpmodul10__1302220048\tpmodul10__1302220048\obj\Debug\net8.0\tpmodul10__1302220048.sourcelink.json
